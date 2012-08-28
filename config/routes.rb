@@ -1,6 +1,9 @@
 Twitter::Application.routes.draw do
-  resources :tweets
+  resources :tweets, :only => [:index, :edit, :update, :create, :destroy]
+  root :to => 'tweets#index'
 
+  resources :pages, :only => [:index]
+  match "/about_us" => "pages#about_us"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

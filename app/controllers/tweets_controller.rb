@@ -11,16 +11,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  # GET /tweets/1
-  # GET /tweets/1.json
-  def show
-    @tweet = Tweet.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tweet }
-    end
-  end
 
   # GET /tweets/new
   # GET /tweets/new.json
@@ -44,11 +34,13 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
+    # Rails.logger.info
     @tweet = Tweet.new(params[:tweet])
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        #redirect to index
+        format.html { redirect_to tweets_path, notice: 'Tweet was successfully created.' }
         format.json { render json: @tweet, status: :created, location: @tweet }
       else
         format.html { render action: "new" }
@@ -71,6 +63,7 @@ class TweetsController < ApplicationController
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /tweets/1
