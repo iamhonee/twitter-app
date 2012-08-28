@@ -1,0 +1,28 @@
+<%- if flash[:notice] %>
+  <%= flash[:notice] %>
+<%- end %>
+<h1>Listing tweets</h1>
+
+<h1>New tweet</h1>
+<%= render 'form' %>
+<table>
+  <tr>
+    <th>Post</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.post %></td>
+<!--     <td><%= link_to 'Show', tweet %></td>
+    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+    <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%-# link_to 'New Tweet', tweets_path %>
