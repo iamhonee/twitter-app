@@ -6,7 +6,6 @@
 
 <table>
   <tr>
-    <th>Post</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,7 +17,7 @@
     <td><%= tweet.post %></td>
 <!--<td><%= link_to 'Show', tweet %></td>
     <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> -->
-    <td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Do you want to delete your tweet?' } %></td>
   </tr>
 <% end %>
 </table>
